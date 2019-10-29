@@ -1,0 +1,22 @@
+<div class="parentC">
+    <p>Your Parent</p>
+    <br>
+    <p>Message from child using output:{{messageFromChildUsingOutput}}</p>
+    <br>
+    <p>Message from child using ViewChild:{{messageByViewChild}}</p>
+    <br>
+    <p>Message from Sibling using Service:{{messageFromSibling}}</p>
+    <div class="sibling">
+        <app-sibling></app-sibling>
+    </div>
+    <div class="childC">
+        <app-view-child></app-view-child>
+    </div>
+    <div class="childOutput childC">
+
+        <app-child-output (messageEvent)="receiveMessage($event)"></app-child-output>
+    </div>
+    <div class="childC">
+        <app-child-input [childMessage]="message"></app-child-input>
+    </div>
+</div>
