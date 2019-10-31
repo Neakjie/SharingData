@@ -1,0 +1,30 @@
+<h1>My message send to child:</h1><em>{{message}}</em>
+<h1>Message get from child:</h1>
+<ul>
+    <li><em>{{viewChildMessage}}</em></li>
+    <li><em>{{childOutputMessage}}</em></li>
+</ul>
+<h1>Message get from Sibling:</h1>
+<em>{{siblingMessage}}</em>
+<hr>
+<h2>Childrens</h2>
+<div>
+    <ul>
+        <li>Input:
+            <app-child-input [childMessage]="message"></app-child-input>
+        </li>
+        <li>ViewChild:
+            <app-child-view></app-child-view>
+        </li>
+        <li>ChildOutPut:<br>
+            <app-out-put-child (eventEmiter)="recivedMessage($event)"></app-out-put-child>
+        </li>
+    </ul>
+    <hr>
+    <h2>Sibling</h2>
+    <app-sibling></app-sibling>
+    <hr>
+    <button mat-raised-button color="primary" (click)="seeMessage()">Go to RoutingSending Data</button>
+    <router-outlet></router-outlet>
+
+    <div>
